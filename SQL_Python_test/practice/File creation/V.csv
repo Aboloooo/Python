@@ -1,0 +1,35 @@
+Device;connected to;port;IP address;subnet mask;network;default gateway;vlan;switchport mode
+PC0;switch0;Fa0;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);
+PC2;switch0;Fa0;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);
+PC1;switch0;Fa0;(DHCP);255.255.255.128;192.168.30.0/25;192.168.30.126; 30(Admin);
+PC3;switch1;Fa0;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);
+PC4;switch1;Fa0;(DHCP);255.255.255.0;192.168.20.0/24;192.168.20.254; 20(Teachers);
+PC5;switch1;Fa0;(DHCP);255.255.255.128;192.168.30.0/25;192.168.30.126; 30(Admin);
+PC6;switch2;Fa0;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);
+PC7;switch2;Fa0;(DHCP);255.255.255.0;192.168.20.0/24;192.168.20.254; 20(Teachers);
+server1;switch3;Fa0;192.168.100.1;255.255.255.240;192.168.100.0/28;192.168.100.14; 40(Servers);
+server2;switch3;Fa0;192.168.100.2;255.255.255.240;192.168.100.0/28;192.168.100.14; 40(Servers);
+switch0;Multilayer switch;Gig0/1;(DHCP);;;; 99(managementV);Trunk
+;PC0;Fa0/1;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);Access
+;PC1;Fa0/2;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);Access
+;PC2;Fa0/3;(DHCP);255.255.255.128;192.168.30.0/25;192.168.30.126; 30(Admin);Access
+;;Fa0/24;;;;;VLAN99(mangmentV);
+switch1;Multilayer switch;Gig0/2;(DHCP);;;; 99(managementV);Trunk
+;PC3;Fa0/1;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);Access
+;PC4;Fa0/2;(DHCP);255.255.255.0;192.168.20.0/24;192.168.20.254; 20(Teachers);Access
+;PC5;Fa0/3;(DHCP);255.255.255.128;192.168.30.0/25;192.168.30.126; 30(Admin);Access
+switch2;Multilayer switch;Gig0/1;(DHCP);;;; 99(managementV);Trunk
+;PC6;Fa0/1;(DHCP);255.255.254.0;192.168.10.0/23;192.168.11.254; 10(Students);Access
+;PC7;Fa0/3;(DHCP);255.255.255.0;192.168.20.0/24;192.168.20.254; 20(Teachers);Access
+switch3;Multilayer switch;Gig0/1;(DHCP);;;; 99(managementV);Trunk
+;server0;Fa0/1;192.168.100.10;255.255.255.240;192.168.100.0/28;192.168.100.14; 40(Servers);Access
+;server1;Fa0/2;192.168.100.11;255.255.255.240;192.168.100.0/28;192.168.100.14; 40(Servers);Access
+Multilayer switch;switch0;Gig1/0/1;-;-;-;-;-;Trunk
+;switch1;Gig1/0/2;-;-;-;-;-;Trunk
+;switch2;Gig1/0/3;-;-;-;-;-;Trunk
+;switch3;Gig1/0/4;-;-;-;-;-;Trunk
+;VLAN10;;192.168.11.254;255.255.254.0;192.168.10.0;-; 10(Students);
+;VLAN20;;192.168.20.254;255.255.255.0;192.168.20.0;-; 20(Teachers);
+;VLAN30;;192.168.30.126;255.255.255.128;192.168.30.0;-; 30(Admin);
+;VLAN40;;192.168.100.14;255.255.255.240;192.168.100.0;-; 40(Servers);
+;VLAN99;;192.168.99.254;255.255.255.0;192.168.99.0;-;VLAN99(mangmentV);
